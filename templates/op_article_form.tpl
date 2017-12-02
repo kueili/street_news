@@ -4,7 +4,7 @@
 
 <script src="ckeditor/ckeditor.js"></script>
 
-    <form action="admin.php" method="post" enctype="multipart/form-data" class="my-4" id="myform" onsubmit="return validate(this);">
+    <form action="admin.php" method="post" enctype="multipart/form-data" class="my-4" id="myform">
         <div class="form-group">
             <label for="title" class="col-form-label sr-only">文章標題</label>
             <input type="text" class="form-control validate[required]" name="title" id="title" placeholder="請輸入文章標題">
@@ -30,12 +30,4 @@
         $('#myform').validationEngine({ promptPosition: "bottomLeft" });
     });
 
-    function validate(form) {
-        CKEDITOR.instances.content.updateElement();
-        $('#content').toggle();
-        validated = $(form).validationEngine('validate');
-        $('#content').toggle();
-
-        return validated;
-    }
 </script>
